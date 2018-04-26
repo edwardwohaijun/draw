@@ -94,7 +94,7 @@ class Chat extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.state.tabIdx === 0){
       this.scrollToBottom();
-      this.textInput.focus();
+      //this.textInput.focus();
     }
   }
 
@@ -130,9 +130,6 @@ class Chat extends Component {
     }
   };
 
-  textFocus = () => {
-    this.textInput.focus()
-  };
   toggleChatWindow = evt => {
     let target = evt.target;
     if (target.nodeName.toLowerCase() === 'button'){ // "toggle-chat-window" is the svg icon, but the enclosing button could also get the click evt
