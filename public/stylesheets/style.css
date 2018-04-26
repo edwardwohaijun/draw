@@ -56,6 +56,7 @@ a {
 /*
 http://cursor.in/
 */
+/*
 .draggable {
     cursor: url('../images/cursors/grab.svg');
     cursor: grab;
@@ -65,6 +66,7 @@ http://cursor.in/
     cursor: url('../images/cursors/grabbing.svg');
     cursor: grabbing;
 }
+*/
 
 /*
 weather-sunRain shape has some animation setting
