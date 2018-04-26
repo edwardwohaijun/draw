@@ -433,7 +433,6 @@ class Main extends Component {
       this.staticData.curve.CPselected = parseInt(evt.target.id[evt.target.id.length - 1]);
 
     } else if (target.classList.contains('scale-handler')) {
-      console.log('scaling');
       this.staticData.action = 'scale';
       let scaleIdx = this.staticData.scaleHandlerIdx = parseInt(target.id.split('-')[2]); // there are 4 scale handlers(top-left, top-right, bottom-right, bottom-left) indexed by 0 ~ 3. Here I save which idx was moused-down
       let pullPoint = this.staticData.handlersPos[scaleIdx];
