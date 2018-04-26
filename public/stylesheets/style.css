@@ -1,0 +1,427 @@
+html, body { margin:0; padding:0; overflow:hidden }
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.line-connect-handler:hover{
+    fill-opacity: 1;
+}
+
+.content-editable {
+    min-height: 1em;
+    /* position: relative; */
+    line-height: 1.2;
+    font-weight: normal; font-size: 14px; z-index: 5; font-family: Tahoma;
+    text-align: center; outline: none; color: rgb(0, 0, 0); white-space: normal;
+    word-wrap: normal; max-width: 77px; min-width: 30px;
+    /* left: 1310px; top: 1134px;  */
+}
+
+.panel-button {
+    background: #f6f6f6;
+    border: none;
+    width: 68px;
+    height: 36px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    left: 2px;
+    top: 2px;
+}
+
+.panel-button:hover{
+    cursor: pointer;
+}
+.panel-button:hover .shape-button{
+    stroke: #f00;
+}
+.custom-shape {
+    border: 1px solid darkgray;
+}
+.custom-shape:hover {
+    border: 1px solid #f00
+}
+
+.toggle-window-button {
+    border: none;
+    background-color: #f6f6f6;
+    margin-top: 8px;
+}
+
+/*
+http://cursor.in/
+*/
+.draggable {
+    cursor: url('../images/cursors/grab.svg');
+    cursor: grab;
+    cursor: move;
+}
+.draggable:active{
+    cursor: url('../images/cursors/grabbing.svg');
+    cursor: grabbing;
+}
+
+/*
+weather-sunRain shape has some animation setting
+ */
+@keyframes a0_do{
+    0%,10% {stroke-dashoffset:30px}
+    58% {stroke-dashoffset:-9px}
+    to {stroke-dashoffset:-5px}
+}
+
+@keyframes a1_do{
+    0%,10% {stroke-dashoffset:30px}
+    58% {stroke-dashoffset:-9px}
+    to {stroke-dashoffset:-5px}
+}
+
+@keyframes a2_do{
+    0%,10% {stroke-dashoffset:30px}
+    58% {stroke-dashoffset:-9px}
+    to {stroke-dashoffset:-5px}
+}
+@keyframes a3_do{
+    0%,10% {stroke-dashoffset:30px}
+    58% {stroke-dashoffset:-9px}
+    to {stroke-dashoffset:-5px}
+}
+
+@keyframes a4_do{
+    0%,10% {stroke-dashoffset:30px}
+    58% {stroke-dashoffset:-9px}
+    to {stroke-dashoffset:-5px}
+}
+
+@keyframes a5_do{
+    0%,10% {stroke-dashoffset:30px}
+    58% {stroke-dashoffset:-9px}
+    to {stroke-dashoffset:-5px}
+}
+
+@keyframes sun_t{
+    0%,50%,to {transform:translate(16.5px,16.5px)}
+    10%,45% {transform:translate(10.5px,9.5px)}
+}
+
+@keyframes r1_do{
+    0% {stroke-dashoffset:19px}
+    50% {stroke-dashoffset:20px}
+    to {stroke-dashoffset:-10px}
+}
+
+@keyframes r2_do{
+    0%,50% {stroke-dashoffset:19px}
+    to {stroke-dashoffset:-12px}
+}
+
+@keyframes r3_do{
+    0% {stroke-dashoffset:19px}
+    50% {stroke-dashoffset:20px}
+    to {stroke-dashoffset:-11px}
+}
+
+.p1 {animation: a0_do 10s linear 3 both}
+.p2 {animation:a1_do 10s linear 3 both}
+.p3 {animation:a2_do 10s linear 3 both}
+.p4 {animation:a3_do 10s linear 3 both}
+.p5 {animation:a4_do 10s linear 3 both}
+.p6 {animation:a5_do 10s linear 3 both}
+.p7 {animation:r1_do 10s linear 3 both}
+.p8 {animation:r2_do 10s linear 3 both}
+.p9 {animation:r3_do 10s linear 3 both}
+.ellipse1 {animation:sun_t 10s linear 3 both}
+
+
+#chat-window {
+  transition: transform 0.5s;
+}
+#attribute-window-body {
+    /* transition: transform 0.5s; */
+    transition: height 0.5s;
+}
+
+#toggle-chat-window-btn, #toggle-attr-window-btn {
+    transition: transform 0.5s;
+}
+
+#chat-window.collapse {
+    /* height: 0 !important; */
+    transform: translate(0px, 521px);
+/*
+520px is the chat window height(excluding the window header), defined in constants/. If the height is to be changed, don't forget to update it here
+*/
+}
+
+#attribute-window-body.collapse{
+    height: 0 !important;
+}
+
+.tab:hover {
+    cursor: pointer;
+}
+/*
+emoji related
+ */
+.emoji-picker {
+    position: absolute !important;
+    bottom: 138px;
+    height: 380px;
+    z-index: 3;
+}
+
+.emoji-img {
+    height: 3ex;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/*
+chat related, steal from https://codepen.io/samuelkraft/pen/Farhl/
+ */
+
+#msg-list {
+  max-width: 450px;
+  height: 460px;
+  margin: 0 auto;
+  overflow: auto;
+  border-bottom: 1px solid darkgray;
+}
+
+/*
+https://codepen.io/akinjide/pen/BpggrZ
+ */
+#msg-list::-webkit-scrollbar
+{
+	width: 4px;
+	background-color: #F5F5F5;
+}
+#msg-list::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#msg-list::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+    border: 2px solid #555555;
+}
+
+.svg-button:hover {
+    cursor: pointer;
+}
+
+svg:focus, input:focus, select:focus, textarea:focus, button:focus {
+    outline: none;
+}
+
+section .msg-container {
+  max-width: 255px;
+  word-wrap: break-word;
+  margin-bottom: 12px;
+  line-height: 24px;
+}
+section div:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.clear {
+  clear: both;
+}
+
+.msg-sender-name {
+    margin-top: 10px;
+    margin-bottom: 4px;
+    color: #757575
+}
+.my-msg {
+    margin-right: 28px;
+    text-align: right;
+}
+.their-msg {
+    margin-left: 28px;
+}
+
+.from-me {
+  position: relative;
+    margin-right: 12px;
+  padding: 0 20px;
+  color: white;
+  background: #0b93f6;
+  border-radius: 22px;
+  float: right;
+}
+.from-me:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -2px;
+  right: -7px;
+  height: 20px;
+  border-right: 20px solid #0b93f6;
+  border-bottom-left-radius: 16px 14px;
+  -webkit-transform: translate(0, -2px);
+}
+.from-me:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: -2px;
+  right: -40px;
+  width: 10px;
+  height: 20px;
+  background: #f6f6f6;
+  border-bottom-left-radius: 10px;
+  -webkit-transform: translate(-30px, -2px);
+}
+.from-me a{
+    color: #fff
+}
+
+.from-them a{
+    color: #000
+}
+.from-them {
+  position: relative;
+    margin-left: 12px;
+  padding: 0 20px;
+  background: #e5e5ea;
+  border-radius: 22px;
+  color: black;
+  float: left;
+}
+.from-them:before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  bottom: -2px;
+  left: -7px;
+  height: 20px;
+  border-left: 20px solid #e5e5ea;
+  border-bottom-right-radius: 16px 14px;
+  -webkit-transform: translate(0, -2px);
+}
+.from-them:after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  bottom: -2px;
+  left: 20px;
+  width: 10px;
+  height: 20px;
+  background: #f6f6f6;
+  border-bottom-right-radius: 10px;
+  -webkit-transform: translate(-30px, -2px);
+}
+
+.from-system-container {
+    clear: both;
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    color: #757575;
+}
+.from-system-container p{
+    font-size: 14px;
+    line-height: 1.7em;
+}
+
+h3.from-system-msg {
+    overflow: hidden;
+    text-align: center;
+    color: #757575;
+    font-weight: normal;
+    font-size: 14px;
+}
+h3.from-system-msg:before, h3.from-system-msg:after {
+    background-color: #ccc;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+h3.from-system-msg:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+h3.from-system-msg:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+/* the member list table */
+#mem-list {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+}
+#mem-list tr{
+    border-bottom: 1px solid #ddd;
+}
+#mem-list th{
+    color: #039;
+    border-bottom: 2px solid #6678b1;
+    padding: 10px 8px;
+    width: 60px
+}
+#mem-list th:nth-child(2){
+    max-width: 200px;
+    width: 200px
+}
+#mem-list td{
+    font-weight: bold; color: #669; padding: 9px 4px; width: 60px
+}
+#mem-list td:nth-child(2){
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px
+}
+
+/* context menu */
+#context-menu ul{
+    list-style:none;
+    margin:0;
+    margin-top:4px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom:3px;
+    font-size:17px;
+    color: #333333;
+}
+/*
+#context-menu hr{ width: 85%;
+  background-color:#E4E4E4;
+  border-color:#E4E4E4;
+    color:#E4E4E4;
+}*/
+#context-menu{
+    display:none;
+    position:fixed;
+    border:1px solid #B2B2B2;
+    width:150px;
+    background:#F9F9F9;
+    box-shadow: 3px 3px 2px #E9E9E9;
+    border-radius:4px;
+}
+
+#context-menu ul li{
+    padding: 3px;
+    padding-left:10px;
+}
+#context-menu ul li:hover{
+    cursor: pointer;
+    color: white;
+    background:#284570;
+}
