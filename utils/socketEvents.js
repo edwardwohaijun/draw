@@ -36,7 +36,7 @@ let helpMsg = {
 
 let contactInfo = `你好, 我是网站作者沃海峻. 该网站只是本人一次学习经历的总结, 从实用角度而言, 网站目前没有任何实际价值, 最多只能算是个prototype.<br/>
 如果你对网站背后的所用技术, 实现原理和将来的发展方向感兴趣, 可以阅读我的一篇博客(link).<br/>
-本网站已开源(link), 且我的下个项目是"人工智能私人助理", 如果你有兴趣共同参与开发或其他形式的合作, 请通过以下方式和我取得联系:
+本网站已<a href="https://github.com/edwardwohaijun/draw" target="_blank">开源</a>, 且我的下个项目是"人工智能私人助理", 如果你有兴趣共同参与开发或其他形式的合作, 请通过以下方式和我取得联系:
 <ul>
   <li>QQ: 1399405937</li>
   <li>Blog: <a href="http://worksphere.cn/blog" target="_blank">Just a coder</a> </li>

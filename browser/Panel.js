@@ -35,7 +35,7 @@ class Panel extends Component {
   render() {
     let buttonContainerSty = {display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap', marginTop: '18px', left: '0px', width: CANVAS_LEFT_MARGIN + 'px', height: '260px', backgroundColor: '#F6F6F6'};
     return (
-      <div style={{position: 'fixed', left: '0px', width: CANVAS_LEFT_MARGIN + 'px', height: '100%', backgroundColor: '#F6F6F6'}}>
+      <div style={{position: 'fixed', left: '0px', width: CANVAS_LEFT_MARGIN + 'px', height: '100%', backgroundColor: '#F6F6F6', borderRight: '1px solid #D9D9DA'}}>
         <div style={buttonContainerSty}>
           {
               regularShapes.map(shape => {
@@ -53,7 +53,7 @@ class Panel extends Component {
               })
           }
         </div>
-        <hr />
+        <hr style={{borderColor: '#D9D9DA', backgroundColor: '#D9D9DA', color: '#D9D9DA', height: '1px', border: '0px'}} />
         <div style={buttonContainerSty}>
           {
             customShapes.map(shapeName => <button key={shapeName} className='panel-button custom-shape' id={'create-custom-' + shapeName} onClick={this.fetchShape}>{shapeName}</button>)

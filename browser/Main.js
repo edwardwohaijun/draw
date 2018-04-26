@@ -751,7 +751,7 @@ class Main extends Component {
         <div>
           <Panel createShape={this.createShape}/>
           <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
-               id='work-space' style={{position: 'absolute', left: `${CANVAS_LEFT_MARGIN}px`, top: '0px', height: '100%', width: '100%', border: '1px solid gray'}}
+               id='work-space' style={{position: 'absolute', left: `${CANVAS_LEFT_MARGIN + 1}px`, top: '0px', height: '100%', width: '100%', backgroundColor: '#F5F5F5'}}
                version="1.1" baseProfile="full" focusable="true" tabIndex="0"
                onKeyUp={this.keyUpHandler} onDoubleClick={this.onDblClick} onMouseMove={this.onMouseMove} onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp}>
             <defs>
