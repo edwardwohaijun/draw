@@ -11,7 +11,7 @@ let production = {
     url: 'mongodb://127.0.0.1/draw'
   },
   hostname: 'worksphere.cn',
-  port: '',
+  port: '80',
 };
 
 module.exports = function(){

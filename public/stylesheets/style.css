@@ -427,3 +427,9 @@ h3.from-system-msg:after {
     color: white;
     background:#284570;
 }
+
+/* loading spinner */
+#spinner-wrapper {
+  width: 140px;
+  margin: 200px auto auto auto;
+}
