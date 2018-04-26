@@ -165,10 +165,10 @@ class AttributeWindow extends Component {
                         togglePicker={this.togglePicker} pickerX={this.state.pickerX} pickerY={this.state.pickerY} />
           </Tab>
           <Tab label='Text' tabIndex={1}>
-            <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}><img src='/images/throw-table.jpg' /></div>
+            <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}><img src='/draw/public/images/throw-table.jpg' /></div>
           </Tab>
           <Tab label='Arrange' tabIndex={2}>
-            <img src='/images/more-requirement.jpg' />
+            <img src='/draw/public/images/more-requirement.jpg' />
           </Tab>
         </Tabs>
       </div>
