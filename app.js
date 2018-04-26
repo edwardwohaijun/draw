@@ -1,4 +1,5 @@
 let express = require('express');
+let http = require('http');
 let path = require('path');
 let logger = require('morgan');
 let bodyParser = require('body-parser');
@@ -37,9 +38,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-let server = require('http').createServer(app).listen(3001, function () {
-  console.log('server started on port: 3001');
-});
+let server = http.createServer(app);
+app.use('/draw/public', express.static(path.join(__dirname, 'public')));
+server.listen(3001);
+console.log('server started on port: 3001');
 
 let io = require('socket.io')(server, {'pingInterval': 25000, 'pingTimeout': 60000, path: '/draw/socket.io'});
 io.set('transports', ['websocket']);
@@ -47,7 +49,6 @@ io.set('transports', ['websocket']);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
 
 require('./routes/index')(app);
 require('./utils/socketEvents').socketEvents(io);
@@ -59,8 +60,12 @@ app.use(function(req, res, next) {
 });
 
 app.use(function(err, req, res, next) {
+  if (res.headersSent) {
+    return next(err)
+  }
+
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', { error: err })
 });
 
 module.exports = app;
