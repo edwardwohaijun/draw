@@ -220,13 +220,9 @@ class Chat extends Component {
 
   render(){
     let lastMsg;
-    if (this.chatWindow){// this.chatWindow exist only after mounted
-      let chatWindow = this.chatWindow.getElementsByClassName('tabs')[0];
-      if (chatWindow.classList.contains('collapse')){
-        lastMsg = this.state.msg.last();
-      }
+    if (this.chatWindow && this.chatWindow.classList.contains('collapse')){// this.chatWindow exist only after mounted
+      lastMsg = this.state.msg.last();
     }
-
     return (
       <div id='chat-window' className='collapse' ref={chat => this.chatWindow = chat} onClick={this.chatWindowOnClick}
            style={{position: 'fixed', right: '0px', bottom: '0px', width: '380px',
