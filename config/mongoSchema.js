@@ -30,10 +30,11 @@ let ShapeSchema = mongoose.Schema({
   attachedTo: String, // text element can only attach to another concrete shape.
 
   fill: String,
-  fillOpacity: Number,
+  'fill-opacity': Number,
   stroke: String,
-  strokeOpacity: Number,
-  strokeWidth: Number,
+  'stroke-opacity': Number,
+  'stroke-width': Number,
+  'stroke-dasharray': String,
   transform: String,
   d: String,
   points: String,

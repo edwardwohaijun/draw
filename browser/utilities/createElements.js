@@ -36,7 +36,8 @@ let customShape = shapeProps => {
 export default function createElements(state, staticData, handlers) {
   return state.objList.map(o => {
   let commonProps = {
-    stroke: o.get('stroke'), strokeWidth: o.get('strokeWidth'), fill: o.get('fill'), fillOpacity: o.get('fillOpacity')
+    stroke: o.get('stroke'), 'stroke-width': o.get('stroke-width'), 'stroke-opacity': o.get('stroke-opacity'), 'stroke-dasharray': o.get('stroke-dasharray'),
+    fill: o.get('fill'), 'fill-opacity': o.get('fill-opacity')
   };
     let objID = o.get('id');
     if (!staticData.attached[objID]){
