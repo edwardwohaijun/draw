@@ -246,8 +246,8 @@ exports.socketEvents = function f(io){
 
     socket.on('/canvas/broadcast-new-shape', shapeType => { // fired only when user want to create custom shape.
       // suppose user want to create a emoji, there are many in this set, so I randomly choose one.
-      if (!shapeType) {
-        console.log('empty shapeType???');
+      if (!shapeType || !customShapes[shapeType]) {
+        console.log('non-existing shape? ', shapeType);
         return
       }
 
