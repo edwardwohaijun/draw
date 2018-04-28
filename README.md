@@ -3,6 +3,8 @@ A simple SVG drawing pad. This app is just a learning experience for SVG develop
 
 Here is a running screenshot of this app.
 
+![running demo](https://github.com/edwardwohaijun/draw/blob/master/drawScreenshot.gif)
+
 # Prerequisites
 * NodeJS
 * MongoDB
