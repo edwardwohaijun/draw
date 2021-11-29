@@ -1,5 +1,5 @@
 # draw
-A simple SVG drawing pad. This app is just a learning experience for SVG development. I've deployed it on my personal site, please [go](https://ewo.xyz/draw) and check it out.
+A simple SVG drawing pad. This app is just a learning experience for SVG development. I've deployed it on my personal site, please [go (https://ewo.xyz)](https://ewo.xyz/draw) and check it out.
 
 Here is a running screenshot of this app.
 
